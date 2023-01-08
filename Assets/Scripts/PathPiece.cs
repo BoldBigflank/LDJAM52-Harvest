@@ -9,6 +9,9 @@ public class PathPiece : MonoBehaviour
     public int pieceIndex;
     public bool locked;
     int orientation;
+    Vector3 desiredAngles;
+    float damping = 0.05f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,19 @@ public class PathPiece : MonoBehaviour
         UpdateButton();
     }
 
+    private void FixedUpdate() {
+        // // Always rotate 
+        // float targetOrientation = 90 * orientation;
+        // while (targetOrientation <= transform.eulerAngles.z) {
+        //     targetOrientation += 360;
+        // }
+        // transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(
+        //     transform.eulerAngles.x,
+        //     transform.eulerAngles.y,
+        //     targetOrientation
+        // ), damping);
+    }
+
     void UpdateButton() {
         transform.eulerAngles = new Vector3(
             transform.eulerAngles.x,
@@ -39,7 +55,7 @@ public class PathPiece : MonoBehaviour
 
     private void OnMouseUpAsButton() {
         if (locked) return;
-        orientation = (orientation + 1) % 4;
+        orientation = (orientation + 1);
         UpdateButton();
     }
 }

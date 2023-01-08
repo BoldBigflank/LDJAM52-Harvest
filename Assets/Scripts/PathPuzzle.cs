@@ -31,7 +31,7 @@ public class PathPuzzle : MonoBehaviour
         complete = true;
 
         for(int i = 0; i < orientations.Length; i++) {
-            bool goodOrientation = orientations[i] == 0;
+            bool goodOrientation = orientations[i] % 4 == 0;
             // Piece 0 can be 0/2
             // 2 can be any
             // 6 also works in position 2 if piece 11 is in position 1

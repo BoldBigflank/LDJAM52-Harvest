@@ -18,7 +18,7 @@ public class LightsOutSphere : MonoBehaviour
 
     public GameObject[] neighbors;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         m_on = false;
@@ -32,6 +32,15 @@ public class LightsOutSphere : MonoBehaviour
 
     void UpdateColor() {
         meshRenderer.material.SetColor("_Color", on ? Color.yellow : Color.grey);
+    }
+
+    public void Setup() {
+        if (Random.Range(0, 100) < 50) return;
+        Toggle();
+        foreach (GameObject neighbor in neighbors) {
+            neighbor.SendMessage("Toggle");
+        }
+        // For Setup don't check the solution
     }
 
     private void OnMouseUpAsButton() {
