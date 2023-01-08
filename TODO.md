@@ -1,24 +1,23 @@
 TOP PRIORITY
- - Top Scene (With Seed/Water/Dirt/Sun)
+ 1 Trigger Scene Elements on Complete
 
 Puzzle Box
- - Create a completed scene on top
- - Small flourish for puzzles
- - Large flourish for game complete 
+ 1 Small flourish for puzzles
+ 1 Large flourish for game complete
+ 1 Elements rise from box on Awake
 
 Seed/Musical Puzzle
- - Create clue background texture
+ 1 Create clue background texture
+ - Arrange the buttons to form a shape
  - Lines between buttons
  - Button Animations
- - Arrange the buttons to form a shape
 
 Sun/Lights Out Puzzle
- - Hint texture (lines between nodes)
+ 1 Hint texture (lines between nodes)
  - Randomize the start state
 
 Water/Cloud Number Puzzle
- - Update Orbit Camera to show the sky
- - Write a clue
+ 1 Write a clue
 
 Dirt Puzzle
  - Animate Spinning Tiles
