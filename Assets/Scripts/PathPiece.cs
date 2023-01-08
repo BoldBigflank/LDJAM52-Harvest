@@ -57,5 +57,6 @@ public class PathPiece : MonoBehaviour
         if (locked) return;
         orientation = (orientation + 1);
         UpdateButton();
+        GameManager.Instance.PlayBlip();
     }
 }

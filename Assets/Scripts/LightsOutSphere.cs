@@ -49,5 +49,6 @@ public class LightsOutSphere : MonoBehaviour
             neighbor.SendMessage("Toggle");
         }
         gameObject.transform.parent.gameObject.SendMessage("CheckSolution");
+        GameManager.Instance.PlayBlip();
     }
 }

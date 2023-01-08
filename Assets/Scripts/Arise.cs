@@ -9,17 +9,17 @@ public class Arise : MonoBehaviour
 
     private void Awake() {
         start = new Vector3(
-            transform.position.x,
-            transform.position.y,
-            transform.position.z
+            transform.localPosition.x,
+            transform.localPosition.y,
+            transform.localPosition.z
         );
-        transform.position = new Vector3(
-            transform.position.x,
-            transform.position.y - 3.0f,
-            transform.position.z
+        transform.localPosition = new Vector3(
+            transform.localPosition.x,
+            transform.localPosition.y - 3.0f,
+            transform.localPosition.z
         );
     }
     private void FixedUpdate() {
-        transform.position = Vector3.Lerp(transform.position, start, damping);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, start, damping);
     }
 }

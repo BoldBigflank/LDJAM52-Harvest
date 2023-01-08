@@ -7,12 +7,9 @@ Seed/Musical Puzzle
 
 Sun/Lights Out Puzzle
  - Button Animations
- - Button Sounds
 
 Water/Cloud Number Puzzle
- - Button Sounds
  - Button Animations
 
 Dirt Puzzle
- - Button Sounds
  - Animate Spinning Tiles

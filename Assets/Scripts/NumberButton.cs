@@ -21,5 +21,6 @@ public class NumberButton : MonoBehaviour
     private void OnMouseUpAsButton() {
         // TODO: Send the number to the parent
         parent.SendMessage("ButtonPressed", num);
+        GameManager.Instance.PlayBlip();
     }
 }

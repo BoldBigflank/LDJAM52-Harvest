@@ -20,9 +20,11 @@ public class GameManager : MonoBehaviour
     public GameObject SeedScene;
     public GameObject SunScene;
     public GameObject FlowerScene;
+    public Transform PuzzleBase;
 
     public AudioClip SmallFlourish;
     public AudioClip LargeFlourish;
+    public AudioClip Blip;
     AudioSource ac;
 
     public int totalComplete { get; set; }
@@ -31,6 +33,27 @@ public class GameManager : MonoBehaviour
         _instance = this;
         Input.simulateMouseWithTouches = true;
         ac = GetComponent<AudioSource>();
+    }
+
+    private void FixedUpdate() {
+        if (totalComplete == 4) {
+        float desiredY = totalComplete == 4 ? -5.01f : 0.0f;
+            PuzzleBase.position = Vector3.Lerp(
+                PuzzleBase.position,
+                new Vector3(
+                    PuzzleBase.position.x,
+                    -5.01f,
+                    PuzzleBase.position.z
+                ),
+                0.05f
+            );
+
+        }
+
+    }
+
+    public void PlayBlip() {
+        ac.PlayOneShot(Blip, 0.7f);
     }
 
     public void PuzzleComplete(string name) {
