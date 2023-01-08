@@ -21,11 +21,16 @@ public class GameManager : MonoBehaviour
     public GameObject SunScene;
     public GameObject FlowerScene;
 
+    public AudioClip SmallFlourish;
+    public AudioClip LargeFlourish;
+    AudioSource ac;
+
     public int totalComplete { get; set; }
 
     private void Awake() {
         _instance = this;
         Input.simulateMouseWithTouches = true;
+        ac = GetComponent<AudioSource>();
     }
 
     public void PuzzleComplete(string name) {
@@ -43,7 +48,10 @@ public class GameManager : MonoBehaviour
         }
         totalComplete += 1;
         if (totalComplete == 4) {
+            ac.PlayOneShot(LargeFlourish, 0.7f);
             FlowerScene.SetActive(true);
+        } else {
+            ac.PlayOneShot(SmallFlourish, 0.7f);
         }
     }
 }
