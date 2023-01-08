@@ -26,6 +26,7 @@ public class LightsOutPuzzle : MonoBehaviour
         }
         if (complete) {
             Debug.Log("Complete!");
+            GameManager.Instance.PuzzleComplete("sun");
         }
     }
 }

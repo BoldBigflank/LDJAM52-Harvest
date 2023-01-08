@@ -4,28 +4,46 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    GameObject particle;
-    // Start is called before the first frame update
-    void Start()
+    private static GameManager _instance;
+    public static GameManager Instance
     {
+        get
+        {
+            if (_instance is null)
+                Debug.LogError("Game Manager is NULL");
+            return _instance;
+        }
+    }
+
+    public GameObject WaterScene;
+    public GameObject DirtScene;
+    public GameObject SeedScene;
+    public GameObject SunScene;
+    public GameObject FlowerScene;
+
+    public int totalComplete { get; set; }
+
+    private void Awake() {
+        _instance = this;
         Input.simulateMouseWithTouches = true;
     }
 
-    void Update()
-    {
-        foreach(Touch touch in Input.touches)
-        {
-            if (touch.phase == TouchPhase.Began)
-            {
-                Debug.Log("Click!");
-                // Construct a ray from the current touch coordinates
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                if (Physics.Raycast(ray))
-                {
-                    // Create a particle if hit
-                    Instantiate(particle, transform.position, transform.rotation);
-                }
-            }
+    public void PuzzleComplete(string name) {
+        if (name == "water") {
+            WaterScene.SetActive(true);
+        }
+        if (name == "dirt") {
+            DirtScene.SetActive(true);
+        }
+        if (name == "seed") {
+            SeedScene.SetActive(true);
+        }
+        if (name == "sun") {
+            SunScene.SetActive(true);
+        }
+        totalComplete += 1;
+        if (totalComplete == 4) {
+            FlowerScene.SetActive(true);
         }
     }
 }

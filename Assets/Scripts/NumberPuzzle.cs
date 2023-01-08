@@ -30,6 +30,7 @@ public class NumberPuzzle : MonoBehaviour
         UpdateText();
         if (displayText == "425") {
             complete = true;
+            GameManager.Instance.PuzzleComplete("water");
             display.GetComponent<TextMeshPro>().color = Color.green;
         }
 

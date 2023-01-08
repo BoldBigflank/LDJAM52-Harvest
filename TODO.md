@@ -1,6 +1,3 @@
-TOP PRIORITY
- 1 Trigger Scene Elements on Complete
-
 Puzzle Box
  1 Small flourish for puzzles
  1 Large flourish for game complete

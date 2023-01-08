@@ -40,7 +40,7 @@ public class PathPuzzle : MonoBehaviour
             complete = complete && goodOrientation;
         }
         if (complete) {
-            Debug.Log("Winner!");
+            GameManager.Instance.PuzzleComplete("dirt");
         }
         
     }

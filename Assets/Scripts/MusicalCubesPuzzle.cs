@@ -32,6 +32,7 @@ public class MusicalCubesPuzzle : MonoBehaviour
             if (puzzleIndex == puzzleLength) {
                 Debug.Log("Winner!");
                 complete = true;
+                GameManager.Instance.PuzzleComplete("seed");
             }
         } else {
             Debug.Log("Wrong!");
